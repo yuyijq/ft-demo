@@ -1,0 +1,61 @@
+使用的工具：
+
+语言平台：ruby 1.9.3
+
+测试驱动框架：cucumber
+
+浏览器驱动框架：selenium webdriver
+
+断言：Rspec
+
+搭建环境：
+
+1 安装rvm
+
+$ bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+
+$ source ~/.bash_profile
+
+2 安装ruby
+
+#最好使用最新版本的ruby，我安装的时候发现有很多gems在老版本的ruby上无法安装
+
+#如果你机器上已经有老的ruby版本，在安装ruby 1.9.3之后，执行rvm use 1.9.3，然后再进行后续操作
+
+$ rvm install 1.9.3
+
+3 设置taobao的gems库镜像
+
+# gems的库现在放到了亚马逊的S3上，由于众所周知的原因，在国内不能直接访问，所幸的是taobao开了一个gems库的镜像：http://ruby.taobao.org
+
+在使用gem安装之前请先设置淘宝的镜像：
+
+＃列出所有gem库位置
+
+gem sources -l
+
+#删除其他所有gems库
+
+gem sources --remove http://rubygems.org
+
+#添加taobao的gems库
+
+gem sources -a http://ruby.taobao.org
+
+4 安装cucumber gem
+
+gem install cucumber
+
+5 安装selenium webdriver
+
+gem install selenium-webdriver
+
+6 安装rake（ruby中的make）
+
+gem install rake
+
+7 安装rspec
+
+gem install rspec
+
+ok，现在环境准备完毕了。你可以从github上checkout代码试运行一下。
