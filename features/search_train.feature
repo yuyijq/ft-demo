@@ -6,9 +6,9 @@ Feature:在去哪儿网搜索火车票
 
 	Scenario Outline:搜索火车票
 		Given 我已经导航到qunar火车票首页："http://train.qunar.com"
-		When 搜索"<fromStation>"到"<toStation>"的火车
+		When 搜索"<fromStation>"到"<toStation>","<date>"的火车
 		Then 我应该能在车次列表里看到车次为"<train>"的列车
 
 		Examples:
-			|fromStation|toStation|train|
-			|北京|通州西|6461|
+			|fromStation|toStation|date|train|
+			|北京|通州西|2012-03-05|6461|
